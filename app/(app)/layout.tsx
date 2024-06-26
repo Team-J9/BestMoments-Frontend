@@ -1,6 +1,6 @@
-import Provider from '@/components/Theme/Provider';
+import Provider from '../components/Theme/Provider';
 import './globals.css';
-import React from 'react';
+import Header from '../components/common/Header';
 
 export default function RootLayout({
   children,
@@ -10,7 +10,10 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="ko">
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Header />
+          {children}
+        </Provider>
       </body>
     </html>
   );

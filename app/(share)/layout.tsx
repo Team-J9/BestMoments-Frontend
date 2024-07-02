@@ -1,5 +1,6 @@
-import Provider from '../components/Theme/Provider';
-import '../(app)/globals.css';
+import Provider from '@/components/Theme/Provider';
+import '@/app/(app)/globals.css';
+import TransitionInitializer from '@/app/(app)/TransitionInitializer';
 
 export const metadata = {
   title: 'BestMoments Share Page',
@@ -8,9 +9,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <Provider>{children}</Provider>
+    <html suppressHydrationWarning lang="ko">
+      <body className="prose dark:prose-invert">
+        <Provider>
+          {children}
+          <TransitionInitializer />
+        </Provider>
       </body>
     </html>
   );

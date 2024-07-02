@@ -1,19 +1,26 @@
 import { ReactNode } from 'react';
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import Provider from '../components/Theme/Provider';
-import Header from '../components/common/Header';
+import ThemeProvider from '@/components/Theme/Provider';
+import Header from '@/components/common/Header';
 import './globals.css';
+import TransitionInitializer from '@/app/TransitionInitializer';
+
+export const metadata = {
+  title: 'BestMoments',
+  description: 'BestMonents MainPage',
+  icons: {
+    icon: '/logo.png',
+  },
+};
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html suppressHydrationWarning lang="ko">
-      <body>
-        <GoogleOAuthProvider clientId={process.env.GOOGLE_CLIENT_ID || ''}>
-          <Provider>
-            <Header />
-            {children}
-          </Provider>
-        </GoogleOAuthProvider>
+      <body className="prose dark:prose-invert">
+        <ThemeProvider>
+          <Header />
+          {children}
+          <TransitionInitializer />
+        </ThemeProvider>
       </body>
     </html>
   );

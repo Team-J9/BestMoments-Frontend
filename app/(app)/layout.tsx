@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Provider from '@/components/Theme/Provider';
 import Header from '@/components/common/Header';
 import './globals.css';
-import TransitionInitializer from '@/app/(app)/TransitionInitializer';
+import TransitionInitializer from '@/app/TransitionInitializer';
 
 export const metadata = {
   title: 'BestMoments',

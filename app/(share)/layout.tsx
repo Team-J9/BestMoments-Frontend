@@ -1,6 +1,6 @@
 import Provider from '@/components/Theme/Provider';
 import '@/app/(app)/globals.css';
-import TransitionInitializer from '@/app/(app)/TransitionInitializer';
+import TransitionInitializer from '@/app/TransitionInitializer';
 
 export const metadata = {
   title: 'BestMoments Share Page',

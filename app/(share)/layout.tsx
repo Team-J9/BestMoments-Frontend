@@ -1,4 +1,4 @@
-import Provider from '@/components/Theme/Provider';
+import ThemeProvider from '@/components/Theme/Provider';
 import '@/app/(app)/globals.css';
 import TransitionInitializer from '@/app/TransitionInitializer';
 
@@ -11,10 +11,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning lang="ko">
       <body className="prose dark:prose-invert">
-        <Provider>
+        <ThemeProvider>
           {children}
           <TransitionInitializer />
-        </Provider>
+        </ThemeProvider>
       </body>
     </html>
   );

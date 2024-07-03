@@ -19,6 +19,7 @@
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^20",
     "@types/react": "^18",

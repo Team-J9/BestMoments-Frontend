@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning lang="ko">
-      <body className="prose dark:prose-invert">
+      <body>
         <ThemeProvider>
           {children}
           <TransitionInitializer />

@@ -17,7 +17,7 @@ const ThemeSwitcher = () => {
   return (
     <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="focus:outline-none">
       {theme === 'dark' ? (
-        <FiMoon className="w-8 h-8 text-yellow-500 transition-transform transform rotate-45" />
+        <FiMoon className="w-8 h-8 text-yellow-500 transition-transform transform rotate-40" />
       ) : (
         <FiSun className="w-8 h-8 text-yellow-500 transition-transform transform rotate-45" />
       )}

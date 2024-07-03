@@ -3,6 +3,7 @@ import ThemeProvider from '@/components/Theme/Provider';
 import Header from '@/components/common/Header';
 import './globals.css';
 import TransitionInitializer from '@/app/TransitionInitializer';
+import Footer from '@/components/common/Footer';
 
 export const metadata = {
   title: 'BestMoments',
@@ -15,10 +16,13 @@ export const metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html suppressHydrationWarning lang="ko">
-      <body className="prose dark:prose-invert">
+      <body>
         <ThemeProvider>
-          <Header />
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
           <TransitionInitializer />
         </ThemeProvider>
       </body>

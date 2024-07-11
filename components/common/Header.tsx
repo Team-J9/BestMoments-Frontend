@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Button from './Button';
 import DropdownMenu from '../MyVideo/DropdownMenu';
 
-const Header = ({ user }: { user: { id: string; profileImageUrl: string; name: string } }) => {
+const Header = ({ user }: { user?: { id: string; profileImageUrl: string; name: string } }) => {
   const handleLogout = async () => {
     /** todo
      * 로그아웃 인증 구현

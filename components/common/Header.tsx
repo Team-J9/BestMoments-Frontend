@@ -1,9 +1,18 @@
+'use client';
+
 import Link from 'next/link';
 import ThemeSwitcher from '../Theme/Switcher';
 import Image from 'next/image';
 import Button from './Button';
+import DropdownMenu from '../MyVideo/DropdownMenu';
 
-const Header = () => {
+const Header = ({ user }: { user: { id: string; profileImageUrl: string; name: string } }) => {
+  const handleLogout = async () => {
+    /** todo
+     * 로그아웃 인증 구현
+     */
+  };
+
   return (
     <header className="w-full sticky top-0 flex border-[#6E6E82] border-b-2 p-5 justify-between backdrop-blur-sm">
       <Link className="flex justify-center items-center" href="/">
@@ -15,12 +24,18 @@ const Header = () => {
       </Link>
       <nav className="flex justify-center items-center gap-5">
         <ThemeSwitcher />
-        <Button as="link" href="/login">
-          로그인
-        </Button>
-        <Button as="link" href="/signup">
-          회원가입
-        </Button>
+        {user ? (
+          <DropdownMenu user={user} handleLogout={handleLogout} />
+        ) : (
+          <>
+            <Button as="link" href="/login">
+              로그인
+            </Button>
+            <Button as="link" href="/signup">
+              회원가입
+            </Button>
+          </>
+        )}
       </nav>
     </header>
   );

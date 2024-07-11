@@ -1,4 +1,5 @@
 import { api } from './index';
+import { setCookie } from 'cookies-next';
 import CryptoJS from 'crypto-js';
 
 export const OAuth = async (oAuthProvider: string, code: string) => {
@@ -26,4 +27,14 @@ export const fetchOAuthTokens = async (provider: string, code: string, state: st
 
   const response = await OAuth(provider, code);
   return response;
+};
+
+export const storeTokenInCookies = (data: any) => {
+  setCookie('accessToken', data.accessToken, { secure: true, sameSite: 'strict' });
+  setCookie('refreshToken', data.refreshToken, { secure: true, sameSite: 'strict' });
+};
+
+export const expireTokenInCookies = (data: any) => {
+  setCookie('accessToken', data.accessToken, { maxAge: 0, secure: true, sameSite: 'strict' });
+  setCookie('refreshToken', data.refreshToken, { maxAge: 0, secure: true, sameSite: 'strict' });
 };

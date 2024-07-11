@@ -4,7 +4,7 @@ import Link from 'next/link';
 import ThemeSwitcher from '../Theme/Switcher';
 import Image from 'next/image';
 import Button from './Button';
-import DropdownMenu from '../MyVideo/DropdownMenu';
+import DropdownMenu from '../MyContents/DropdownMenu';
 
 const Header = ({ user }: { user?: { id: string; profileImageUrl: string; name: string } }) => {
   const handleLogout = async () => {

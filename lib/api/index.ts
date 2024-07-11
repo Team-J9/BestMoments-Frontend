@@ -28,4 +28,5 @@ export const api = {
   get: (url: string, options?: RequestOptions) => request(url, 'GET', options),
   post: (url: string, body: any, options?: RequestOptions) => request(url, 'POST', { ...options, body }),
   patch: (url: string, body: any, options?: RequestOptions) => request(url, 'PATCH', { ...options, body }),
+  delete: (url: string, options?: RequestOptions) => request(url, 'DELETE', options),
 };

@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { fetchOAuthTokens } from '@/lib/api/auth';
+import { fetchOAuthTokens, storeTokenInCookies } from '@/lib/api/auth';
 
 /**
  * todo
@@ -23,7 +23,8 @@ const GoogleCallback = ({ provider }: { provider: string }) => {
 
       try {
         const data = await fetchOAuthTokens(provider, code, state);
-        console.log(data);
+        storeTokenInCookies(data);
+        router.push('/');
       } catch (error: any) {
         console.error(error);
         setError(error.message || '요청에 실패하였습니다. 잠시후 다시 시도해주세요.');
